@@ -13,9 +13,6 @@ body
   min-height: 100vh;
   background: #000;
 }
- a{
-  text-decoration: none;
-}
 
 .scan
 {
@@ -89,6 +86,9 @@ body
   color: #3fefef;
   filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
   animation: animate_text 1s steps(1) infinite;
+}
+ a{
+  text-decoration: none;
 }
 
 @keyframes animate_text
