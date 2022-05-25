@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>select page</title>
+
+    <link rel="stylesheet" href="select.css" >
+  </head>
+
+  <body>
+    <section>
+      <ul>
+        <li class="list active" data-filter="all">All</li>
+        <li class="list" data-filter="mobile">Color</li>
+        <li class="list" data-filter="camera">Big</li>
+        <li class="list" data-filter="watch">Small</li>
+        <li class="list" data-filter="shoe">Man</li>
+        <li class="list" data-filter="headphone">Woman</li>
+      </ul>
+
+      <div class="product">
+            <div class="itemBox" data-item="mobile"><img src="mobile1.jpg"></div>
+                <div class="itemBox" data-item="camera"><img src="camera1.jpg"></div>
+                <div class="itemBox" data-item="watch"><img src="watch1.jpg"></div>
+                <div class="itemBox" data-item="shoe"><img src="shoe1.jpg"></div>
+                <div class="itemBox" data-item="headphone"><img src="headphone1.jpg"></div>
+
+                <div class="itemBox" data-item="mobile"><img src="mobile2.jpg"></div>
+                <div class="itemBox" data-item="camera"><img src="camera2.jpg"></div>
+                <div class="itemBox" data-item="watch"><img src="watch2.jpg"></div>
+                <div class="itemBox" data-item="shoe"><img src="shoe2.jpg"></div>
+                <div class="itemBox" data-item="headphone"><img src="headphone2.jpg"></div>
+
+                <div class="itemBox" data-item="mobile"><img src="mobile3.jpg"></div>
+                <div class="itemBox" data-item="camera"><img src="camera3.jpg"></div>
+                <div class="itemBox" data-item="watch"><img src="watch3.jpg"></div>
+                <div class="itemBox" data-item="shoe"><img src="shoe3.jpg"></div>
+                <div class="itemBox" data-item="headphone"><img src="headphone3.jpg"></div>
+
+                <div class="itemBox" data-item="mobile"><img src="mobile4.jpg"></div>
+                <div class="itemBox" data-item="watch"><img src="watch4.jpg"></div>
+                <div class="itemBox" data-item="shoe"><img src="shoe4.jpg"></div>
+                <div class="itemBox" data-item="headphone"><img src="headphone4.jpg"></div>
+
+                <div class="itemBox" data-item="mobile"><img src="mobile5.jpg"></div>
+
+      </div>
+
+</section>
+
+<script>
+ let list = document.querySelectorAll('.list');
+ let itemBox = document.querySelectorAll('.itemBox');
+
+ for(let i=0; i<list.length; i++){
+   list[i].addEventListener('click', function(){
+     for(let j=0; j<list.length; j++){
+       list[j].classList.remove('active');
+     }
+     this.classList.add('active');
+
+
+     let dataFilter = this.getAttribute('data-filter');
+
+     for(let k=0; k<itemBox.length; k++){
+       itemBox[k].classList.remove('active');
+       itemBox[k].classList.add('hide');
+
+       if(itemBox[k].getAttribute('data-item')==dataFilter ||
+     dataFilter == "all"){
+       itemBox[k].classList.remove('hide');
+       itemBox[k].classList.add('active');
+
+     }
+     }
+
+
+
+
+
+
+
+
+   })
+ }
+</script>
+
+  </body>
+</html>
